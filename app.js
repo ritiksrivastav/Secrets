@@ -179,10 +179,20 @@ app.get("/logout", function(req, res){
 
   res.redirect("/");
 
-})
-app.listen(3000,function(){
+});
+app.get("/about", function(req, res){
+  res.render("about");
+});
+let port = process.env.PORT;
+
+if (port == null || port == "") {
+
+port = 3000;
+
+}
+app.listen(port,function(){
     console.log("Server is Listening at Port 3000");
-})
+});
 
 /*
   if u want to add the ability for the user to add or delete any of their secrets
